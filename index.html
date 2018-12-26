@@ -1,0 +1,193 @@
+<!--
+Assingment 4 - Create a react to-do app
+
+"I, Meetkumar, student number: 000385026, certify that this material is my original work. No other person's work has been used without due acknowledgement and I have not made my work available to anyone else."
+
+I learned to create some components from link below :
+https://www.youtube.com/watch?v=IR6smI_YJDE
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 4 : 000385026 React to-do app</title>
+	
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<style type="text/css">
+.form-style-8{
+	font-family: 'Open Sans Condensed', arial, sans;
+	width: 500px;
+	padding: 30px;
+	background: #FFFFFF;
+	margin: 50px auto;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+
+}
+.form-style-8 h2{
+	background: #4D4D4D;
+	text-transform: uppercase;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: #797979;
+	font-size: 18px;
+	font-weight: 100;
+	padding: 20px;
+	margin: -30px -30px 30px -30px;
+}
+.form-style-8 input[type="text"],
+.form-style-8 input[type="date"],
+.form-style-8 input[type="datetime"],
+.form-style-8 input[type="email"],
+.form-style-8 input[type="number"],
+.form-style-8 input[type="search"],
+.form-style-8 input[type="time"],
+.form-style-8 input[type="url"],
+.form-style-8 input[type="password"],
+.form-style-8 textarea,
+.form-style-8 select 
+{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	outline: none;
+	display: block;
+	width: 100%;
+	padding: 7px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	background: transparent;
+	margin-bottom: 10px;
+	font: 16px Arial, Helvetica, sans-serif;
+	height: 45px;
+}
+.form-style-8 textarea{
+	resize:none;
+	overflow: hidden;
+}
+.form-style-8 input[type="button"], 
+.form-style-8 input[type="submit"]{
+	-moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+	box-shadow: inset 0px 1px 0px 0px #45D6D6;
+	background-color: #2CBBBB;
+	border: 1px solid #27A0A0;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 14px;
+	padding: 8px 18px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.form-style-8 input[type="button"]:hover, 
+.form-style-8 input[type="submit"]:hover {
+	background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
+	background-color:#34CACA;
+}
+
+table{
+  width:100%;
+  table-layout: fixed;
+  padding-top:50px;
+}
+.tbl-header{
+  background-color: rgba(255,255,255,0.3);
+ }
+.tbl-content{
+  height:300px;
+  overflow-x:auto;
+  margin-top: 0px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+th{
+  padding: 20px 15px;
+  padding-top: 20px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 28px;
+  color: #000;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+    border-left: 2px solid rgba(255,255,255,0.3);
+	  border-right: 2px solid rgba(255,255,255,0.3);
+	  border-top: 4px solid rgba(255,255,255,0.3);
+}
+td{
+  padding: 15px;
+  text-align: left;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 24px;
+  color: #fff;
+  border-bottom: solid 2px rgba(255,255,255,0.1);
+  border-left: solid 2px rgba(255,255,255,0.1);
+  border-right: solid 2px rgba(255,255,255,0.1);
+}
+
+
+/* demo styles */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+body{
+  background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+  background: linear-gradient(to right, #25c481, #25b7c4);
+  font-family: 'Roboto', sans-serif;
+}
+section{
+  margin: 50px;
+}
+button {
+  background: 4px solid white;
+  border: none;
+  display: inline-block;
+  overflow: hidden;
+  padding: 5px 20px 5px 5 px;
+  position: relative;
+  margin-left:10px;
+}
+
+button,
+svg {
+  cursor: pointer;
+  font-family: 'Roboto';
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.footer {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+  font-size: 22px;
+}	
+.red{
+color:red;
+}
+.green{
+color:green;
+}
+.boldIt{
+color:black;
+font-size: 24px;
+font-weight:bold;
+}
+</style>
+</head>
+<body>
+	<div class="form-style-8 tbl-header">
+    <div id="app" />
+    <script src="bundle.js"></script>
+	</div>
+	
+	
+<div class="footer">
+<span class="boldIt"> Note : </span>Task in <span class="red"> Red </span> means it is not finished.
+<br/>Click on task it self to change it to <span class="green">finished.</span>
+</div>
+</body>
+</html>
